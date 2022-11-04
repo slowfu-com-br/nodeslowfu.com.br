@@ -9,7 +9,7 @@ const port = process.env.Port || 3000;
 
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, "public")));
-app.use(express.urlencoded()) //{extended: false}
+app.use(express.urlencoded({extended: false})) 
 
 const bcrypt = require('bcrypt')
 const req = require("express/lib/request")
@@ -69,7 +69,7 @@ app.get('/blog', (req, res) => {
 });
 app.get('/faq', (req, res) => {
   res.render('faq.ejs');
-});
+});https://github.com/slowfu-com-br/nodeslowfu.com.br.git
 app.get('/contato', (req, res) => {
   res.render('contato.ejs');
 });
