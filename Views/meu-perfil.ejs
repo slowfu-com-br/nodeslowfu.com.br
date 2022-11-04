@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/paginas/home.css" />
+    <link rel="stylesheet" href="assets/css/paginas/meu-perfil.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Slowfu - Policultura Familiar</title>
+    <title>Meu Perfil - Policultura Familiar</title>
     <link rel="shortcut icon" href="imagens/favicon4.png" type="image/x-icon" />
     <link rel="stylesheet" href="assets/css/login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +27,9 @@
                     <img src="imagens/icons/user.png" alt="User" />
                     <a href="login">Login/Cadastro</a>
                 </li>
-                <li><a href="meu-perfil">Meu Perfil</a></li>
+                <li>
+                  <a href="meu-perfil">Meu Perfil</a>
+                </li>
             </ul>
         </div>
         <div class="firstMenu">
@@ -78,7 +82,7 @@
                         </li>
                     </ul>
                     <ul class="menu-login">
-                        <li class="item-menu-login"><a href="login">Login/Cadastro</a></li>
+                        <li class="item-menu-login"><a href="login">Login</a></li>
                         <li class="item-menu-login"><a href="meu-perfil">Meu Perfil</a></li>
                     </ul>
                 </nav>
@@ -90,74 +94,57 @@
     <main>
         <div class="fotoinicioBlog">
             <div class="box-title-banner-home">
-                <h1>Login / Cadastro</h1>
-                <p>Home > Login | Cadastro </p>
+                <h1>Meu Perfil</h1>
+                <p>Home > Meu Perfil </p>
             </div>
         </div>
 
         <div class="container">
             <div class="flex">
-                <div class="box-50 box-mob-100">
-                    <div class="formcontato">
-                        <h2 id="login-tittle">LOGIN</h2>
-                        <div class="linha"></div>
-                        <form action="/login" method="post">
+                <div class="box-40 box-mob-100">
+                    <img style="width: 50%; margin: 30px auto;" class="img-responsive" src="imagens/Logo SlowFu_V9_V4 cópia.png" alt="Perfil do Fornecedor">
+                    <div class="box-text-meu-perfil">
+                      <h2>Olá, <strong>NOME DO USUÁRIO</strong></h2>
+                      <p>Espero que possamos ajuda-lo a achar um possível comprador de forma rápida e ágil. Para isso, basta preencher o formulário ao lado e a sua postagem ficará disponível para vizualização.</p>
+                      <p>Qualquer dúvida que tiver, pode nos acionar ou acessar o <a href="faq">FAQ - Dúvidas Frequentes</a></p>
+                      <br>
+                      <p>Aproveite também para conhecer o nosso <a href="blog">Blog</a>, com as principais informações sobre esse movimento que vem crescendo tanto.</p>
+                      <br>
+                      <h3>Minha Conta</h3>
+                      <p><strong>Nome:</strong> Nome do Usuário</p>
+                      <p><strong>E-mail:</strong> nome@usuario.com.br</p>
+                      <p><Strong>Telefone:</Strong> (99) 99999-9999</p>
+                    </div>
+                </div>
+                <div class="box-60 box-mob-100">
+                    <div class="formcontato" id="hr">
+                        <h2>Faça uma Postagem</h2>
+                        <div class="linha second"></div>
+                        <form action="/post" method="post">
                             <div class="form-container-input">
-                                <label for="nome">E-mail</label>
-                                <input class="form-input" placeholder="exemplo@gmail.com" type="email" required id="email_login"
+                                <label for="nome">Titulo</label>
+                                <input class="form-input" required placeholder="exemplo@gmail.com" type="email" id="email"
                                     name="email_usuario">
                             </div>
                             <div class="form-container-input">
-                                <label for="email">Senha</label>
-                                <input class="form-input" placeholder="*********" type="password" required id="senha_login"
-                                    name="senha_usuario">
-                            </div>
-
-                            <div class="button_contato">
-                                <button class="form-input" type="submit">E N T R A R</button>
-                            </div>
-                            <a href="#" class="forget-pass">Esqueci minha senha</a>
-
-                           <!-- 
-                                <div class="login-social">
-                                    <h4>Login com as redes sociais</h4>
-                                    <div class="social">
-                                        <button type="submit"><img id="form-btn-img" src="imagens/google.png" alt="">
-                                            continue with
-                                            google </button>
-                                        <button type="submit"><img id="form-btn-img" src="imagens/facebook.png" alt="">
-                                            continue with
-                                            facebook </button>
-                                    </div>
-                                </div>
-                            -->
-                        </form>
-                    </div>
-                </div>
-                <div class="box-50 box-mob-100">
-                    <div class="formcontato" id="hr">
-                        <h2>CADASTRO</h2>
-                        <div class="linha second"></div>
-                        <form action="/cadastro" method="post">
-                            <div class="form-container-input">
-                                <label for="nome">E-mail</label>
-                                <input class="form-input" placeholder="exemplo@gmail.com" type="email" required id="email_cadastro"
-                                    name="email_cadastro">
+                                <label for="nome">Descrição</label>
+                                <input class="form-input" required placeholder="Digite a descrição da sua produção" type="text" id="text"
+                                    name="text_usuario">
                             </div>
                             <div class="form-container-input">
-                                <label for="email">Telefone</label>
-                                <input class="form-input" placeholder="(99) 99999-9999" type="tel" required id="tel-cadastro"
-                                    name="telefone_cadastro">
+                                <label for="nome">Selecione uma Imagem</label>
+                                <input class="" placeholder="Digite a descrição da sua produção" required type="file" id="img_postagem"
+                                    name="imagem-postagem">
                             </div>
                             <div class="form-container-input">
-                                <label for="email">Senha</label>
-                                <input class="form-input" placeholder="*********" type="password" required id="senha_cadastro"
-                                    name="senha_cadastro">
+                              <label for="email">Telefone</label>
+                              <input class="form-input" required placeholder="(99) 99999-9999" type="tel" id="tel_tel"
+                                  name="telefone_usuario">
                             </div>
                             <div class="form-container-input">
-                                <label for="email">Confirme senha</label>
-                                <input class="form-input" placeholder="*********" type="password"  required id="conf_senha_cadastro"
-                                    name="conf_senha_cadastro">
+                                <label for="email">Whatsapp</label>
+                                <input class="form-input" required placeholder="(99) 99999-9999" type="email" id="tel-whats"
+                                    name="telefone_whatsapp">
                             </div>
                             <div class="button_contato">
                                 <button class="form-input" id="yellow" type="submit">C A D A S T R A R</button>
@@ -167,9 +154,69 @@
                 </div>
             </div>
         </div>
-
-
-
+        <div class="container">
+          <div class="text-center">
+            <h2 style="font-size: 2rem;">Suas Postagens</h2>
+          </div>
+          <div class="box-border-post">
+            <div class="box-bg-postagens">
+              <div class="flex">
+                <div class="box-40">
+                  <div class="box-img-post">
+                    <img class="img-responsive" src="imagens/postagens/post-1.jpg" alt="Postagem 1">
+                  </div>
+                </div>
+                <div class="box-60">
+                  <div class="box-content-post">
+                    <h3>Lorem Ipsum</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt cupiditate sit earum repellendus
+                      quaerat quas autem odio aspernatur dolorem quibusdam doloremque sequi id consequuntur repellat,
+                      alias
+                      aliquid laboriosam at dignissimos.</p>
+                    <ul class="btn-post">
+                      <li class="item-menu-login"><a href="tel:+5511999999999"><i class="fa-solid fa-phone"></i> LIGAR</a></li>
+                      <li class="item-menu-login"><a href="tel:+5511999999999">VER ANÚNCIO</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <ul class="btn-post">
+              <li  class="item-menu-login"><a style="background: gold; color: #000;" href="tel:+5511999999999">ALTERAR ANÚNCIO</a></li>
+              <li class="item-menu-login"><a style="background: crimson; color: #fff;" href="tel:+5511999999999">REMOVER ANÚNCIO</a></li>
+            </ul>
+          </div>
+          <div class="box-border-post">
+            <div class="box-bg-postagens">
+              <div class="flex">
+                <div class="box-40">
+                  <div class="box-img-post">
+                    <img class="img-responsive" src="imagens/postagens/post-1.jpg" alt="Postagem 1">
+                  </div>
+                </div>
+                <div class="box-60">
+                  <div class="box-content-post">
+                    <h3>Lorem Ipsum</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt cupiditate sit earum repellendus
+                      quaerat quas autem odio aspernatur dolorem quibusdam doloremque sequi id consequuntur repellat,
+                      alias
+                      aliquid laboriosam at dignissimos.</p>
+                    <ul class="btn-post">
+                      <li class="item-menu-login"><a href="tel:+5511999999999"><i class="fa-solid fa-phone"></i> LIGAR</a></li>
+                      <li class="item-menu-login"><a href="tel:+5511999999999">VER ANÚNCIO</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <ul class="btn-post">
+              <li  class="item-menu-login"><a style="background: gold; color: #000;" href="tel:+5511999999999">ALTERAR ANÚNCIO</a></li>
+              <li class="item-menu-login"><a style="background: crimson; color: #fff;" href="tel:+5511999999999">REMOVER ANÚNCIO</a></li>
+            </ul>
+          </div>
+        </div>
     </main>
 
 
@@ -181,7 +228,7 @@
                     <div class="box-25 box-mob-100 ">
                         <div class="box-footer-itens">
                             <div id="logo" class="logo">
-                                <a href="/">
+                                <a href="index">
                                     <picture>
                                         <img src="imagens/Logo SlowFu_V6.png" alt="Slowfu" />
                                     </picture>
@@ -200,27 +247,27 @@
                             <ul>
                                 <li>
                                     >
-                                    <a href="/" target="_blank">Home</a>
+                                    <a href="index">Home</a>
                                 </li>
                                 <li>
                                     >
-                                    <a href="quem-somos" target="_blank">Quem Somos</a>
+                                    <a href="quem-somos">Quem Somos</a>
                                 </li>
                                 <li>
                                     >
-                                    <a href="blog" target="_blank">Blog</a>
+                                    <a href="blog">Blog</a>
                                 </li>
                                 <li>
                                     >
-                                    <a href="contato" target="_blank">Contato</a>
+                                    <a href="contato">Contato</a>
                                 </li>
                                 <li>
                                     >
-                                    <a href="faq" target="_blank">Faq</a>
+                                    <a href="faq">Faq</a>
                                 </li>
                                 <li>
                                     >
-                                    <a href="mapa-do-site" target="_blank">Mapa do Site</a>
+                                    <a href="mapa-do-site">Mapa do Site</a>
                                 </li>
                             </ul>
                         </div>

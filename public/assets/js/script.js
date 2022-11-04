@@ -44,3 +44,20 @@ for (i = 0; i < acc.length; i++) {
         }
     });
 }   
+
+/* Validar Senha */
+
+const senha_cadastro = document.getElementById("senha_cadastro");
+const senha_cadastro_confirm = document.getElementById("conf_senha_cadastro");
+
+
+   while (true) {
+    if(senha_cadastro.value =! senha_login.value){
+        senha_cadastro_confirm.style.color = "red";
+    } else{
+        senha_cadastro_confirm.style.color = "green";
+
+    }
+   }
+
+

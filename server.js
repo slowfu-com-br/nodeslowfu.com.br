@@ -1,4 +1,5 @@
 require('dotenv').config();
+
 // Listagem das bibliotecas instaladas com npm:
 const express = require('express');
 const app = express();
@@ -10,15 +11,50 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded()) //{extended: false}
 
-// const bcrypt = require('bcrypt')
-// const req = require("express/lib/request")
-// const res = require("express/lib/response")
-// const passport = require('passport')
-// const initializePassport = require('./passport-config')
-// const users = []
+const bcrypt = require('bcrypt')
+const req = require("express/lib/request")
+const res = require("express/lib/response")
+const passport = require('passport')
+const initializePassport = require('./passport-config')
+const users = []
 
 
 // Processo de Registro
+
+app.post("/login", async (req , res) => {
+  try{
+      const hashedPassword = await bcrypt.hash(req.body.password, 10)
+      users.push({
+          id:Date.now().toString(),
+          name: req.body.name, 
+          email: req.body.email,
+          password: hashedPassword,
+      })
+      console.log(users)
+      res.redirect("/meu-perfil")
+  } catch(e){
+      console.log(e)
+      res.redirect("/login")
+  }
+})
+
+// Processo de Login
+app.post("/cadastro", async (req , res) => {
+  try{
+      const hashedPassword = await bcrypt.hash(req.body.password, 10)
+      users.push({
+          id:Date.now().toString(),
+          name: req.body.name, 
+          email: req.body.email,
+          password: hashedPassword,
+      })
+      console.log(users)
+      res.redirect("/login")
+  } catch(e){
+      console.log(e)
+      res.redirect("/login")
+  }
+})
 
 // Inicio das Rotas:
 
@@ -67,6 +103,12 @@ app.get('/slow-food-indica', (req, res) => {
 });
 app.get('/login', (req, res) => {
   res.render('login.ejs');
+});
+app.get('/meu-perfil', (req, res) => {
+  res.render('meu-perfil.ejs');
+});
+app.get('/404', (req, res) => {
+  res.render('404.ejs');
 });
 
 // Fim das Rotas

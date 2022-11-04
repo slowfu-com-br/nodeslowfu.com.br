@@ -1,0 +1,31 @@
+
+
+
+.input-personalizado{
+  cursor: pointer;
+  background: #333;
+color: #fff;
+width: 100%;
+text-align: center;
+padding: 16px 20px;
+border-radius: 39px;
+}
+
+.formcontato label img{
+ width: 20px;
+}
+
+.imagem-post{
+  max-width: 100%;
+}
+
+.input-file{
+  display:none;
+}
+
+.box-border-post{
+  border: 2px solid #333;
+  border-radius: 20px;
+  padding: 0 20px;
+  margin: 20px 0;
+}
