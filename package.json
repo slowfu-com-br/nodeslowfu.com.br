@@ -4,7 +4,7 @@
   "description": "SlowFu - Policultura Familiar",
   "main": "index.js",
   "scripts": {
-    "DevStart": "nodemon server.js"
+    "DevStart": "nodemon index.js"
   },
   "repository": {
     "type": "git",
