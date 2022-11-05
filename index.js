@@ -5,6 +5,7 @@ const express = require('express');
 const app = express();
 const path = require("path");
 
+
 const port = process.env.Port || 3000;
 
 app.set('view engine', 'ejs');
@@ -21,12 +22,11 @@ const users = []
 
 // Processo de Registro
 
-app.post("/login", async (req , res) => {
+app.get("/login", async (req , res) => {
   try{
       const hashedPassword = await bcrypt.hash(req.body.password, 10)
       users.push({
           id:Date.now().toString(),
-          name: req.body.name, 
           email: req.body.email,
           password: hashedPassword,
       })
@@ -69,7 +69,7 @@ app.get('/blog', (req, res) => {
 });
 app.get('/faq', (req, res) => {
   res.render('faq.ejs');
-});https://github.com/slowfu-com-br/nodeslowfu.com.br.git
+});
 app.get('/contato', (req, res) => {
   res.render('contato.ejs');
 });
